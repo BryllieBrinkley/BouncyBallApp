@@ -65,7 +65,6 @@ func addTarget(at position: Point) {
     ]
     
     let target = PolygonShape(points: targetPoints)
-    
     targets.append(target)
     
     target.position = position
@@ -93,21 +92,24 @@ func setup() {
     addTarget(at: Point(x: 213, y: 348))
     addTarget(at: Point(x: 113, y: 267))
     
-
     funnel.onTapped = dropBall
     
-    scene.onShapeMoved = printPosition(of:)
-    
+    //    scene.onShapeMoved = printPosition(of:)
     resetGame()
 }
 
 
 func dropBall() {
+    
     ball.position = funnel.position
     ball.stopAllMotion()
     
     for barrier in barriers {
         barrier.isDraggable = false
+    }
+    
+    for target in targets {
+        target.fillColor = .yellow
     }
 }
 
@@ -118,15 +120,31 @@ func ballCollided(with otherShape: Shape) {
 
 func ballExitedScene() {
     
+    var hitTargets = 0
+    
+    for target in targets {
+        if target.fillColor == .green {
+            hitTargets += 1
+        }
+    }
+    if hitTargets == targets.count {
+        scene.presentAlert(text: "You Won!", completion: alertDismissed)
+    }
+    
     for barrier in barriers {
         barrier.isDraggable = true
     }
+}
+
+
+func alertDismissed() {
+    
 }
 
 func resetGame() {
     ball.position = Point(x: 0, y: -80)
 }
 
-func printPosition(of shape: Shape) {
-    print(shape.position)
-}
+//func printPosition(of shape: Shape) {
+//    print(shape.position)
+//}
