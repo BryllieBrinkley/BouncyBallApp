@@ -81,13 +81,19 @@ func addTarget(at position: Point) {
 func setup() {
     
     setupBall()
-    
-    addBarrier(at: Point(x: 200, y: 150), width: 80, height: 25, angle: 0.1)
-    
     setupFunnel()
     
-    addTarget(at: Point(x: 150, y: 400))
+    addBarrier(at: Point(x: 175, y: 100), width: 80, height: 25, angle: 0.1)
+    addBarrier(at: Point(x: 100, y: 150), width: 30, height: 15, angle: -0.2)
+    addBarrier(at: Point(x: 325, y: 150), width: 100, height: 25, angle: 0.3)
     
+    addTarget(at: Point(x: 184, y: 563))
+    addTarget(at: Point(x: 238, y: 624))
+    addTarget(at: Point(x: 269, y: 453))
+    addTarget(at: Point(x: 213, y: 348))
+    addTarget(at: Point(x: 113, y: 267))
+    
+
     funnel.onTapped = dropBall
     
     scene.onShapeMoved = printPosition(of:)
