@@ -18,5 +18,5 @@ BouncyBall is a game where players aim and hit targets using a bouncing ball. Th
 - 
 ## Gameplay
 - Clone the repository or download the project files.
-- Open in Xcode: Open project folder in Xcode.
-- Build and Run: Build and run the project on a simulator or a physical device.
+- Open project folder in Xcode.
+- Build and run the project on a simulator or a physical device.
