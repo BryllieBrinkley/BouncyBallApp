@@ -1,4 +1,4 @@
-# BouncyBall Game Project
+# BouncyBall
 
 BouncyBall is a game where players aim and hit targets using a bouncing ball. The game involves physics and touch interactions to provide an engaging and interactive experience.
 
